@@ -51,10 +51,6 @@ This will do the following:
  3. Deploy the admx/adml file
 Once the files have been created you simply need to upload them to Intune as a [Imported ADMX](https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/~/configProfiles). Afterwards you can use them in a new configuration profile from the `Imported Administrative templates (Preview)` type.
 
-## 🛣️ Roadmap
-
-- A function to add or remove registry keys from existing admx/adml files
-- A GUI to add registry keys to the csv and automatically create admx/adml files
 
 ## 🤝 Contributing
 
