@@ -1,39 +1,33 @@
-<#PSScriptInfo
+<#
+.SYNOPSIS
+   Create ADMX and ADML files from a CSV file with registry keys.
 
-.VERSION 1.0.2
+.DESCRIPTION
+   Use this script to create ADMX and ADML files from a CSV file with registry keys.
+   Those can then be used to deploy registry keys via Intune as Intune has no native functionality to deploy registry keys and sometimes a PowerShell script is too much for a single regsitry key.
 
-.GUID 19d3e622-c9d6-49b4-bb3e-e27f942fb124
+.PARAMETER -Name
+   Define the name that your admx and adml files should have.
 
-.AUTHOR Niklas Rast
+.PARAMETER -CSVPath
+   Set the path to the add-keys.csv file.
+   The CSV file should contain the following columns:
+    path,type,name,value
 
-.COMPANYNAME Niklas Rast
+.PARAMETER -Verbose
+   Enable verbose output.
 
-.COPYRIGHT Niklas Rast
+.EXAMPLE
+   .\New-ADMXADML.ps1 -Name "MyPolicy" -CSVPath "C:\path\to\add-keys.csv"
+   This will create a new ADMX and ADML file set with the name "MyPolicy" and the registry keys defined in the add-keys.csv file.
+   The files will be created on the Desktop.
 
-.TAGS 
+.LINK
+   https://github.com/niklasrst/windows-admx-wizard
 
-.LICENSEURI 
-
-.PROJECTURI 
-
-.ICONURI 
-
-.EXTERNALMODULEDEPENDENCIES 
-
-.REQUIREDSCRIPTS 
-
-.EXTERNALSCRIPTDEPENDENCIES 
-
-.RELEASENOTES
-
+.AUTHOR
+   Niklas Rast
 #>
-
-<# 
-
-.DESCRIPTION 
- Remove Bloatware from an Windows system 
-
-#> 
 
 [CmdletBinding()]
 param (
@@ -171,7 +165,6 @@ foreach ($RegKey in $RegKeys) {
         <string id="POL_$($keyguid)_HELP">Set the value for $name</string>
 "@ | Out-File -FilePath "$OutFileLocation\$($FileName).adml" -Append
     }
-### NEW ###
         BINARY { 
             Write-Host "Adding $name ($type) with $keyguid to $FileName ADMX file..." -ForegroundColor Green
 @"
@@ -191,7 +184,6 @@ foreach ($RegKey in $RegKeys) {
         <string id="POL_$($keyguid)_HELP">Set the value for $name</string>
 "@ | Out-File -FilePath "$OutFileLocation\$($FileName).adml" -Append
      }
-### END-NEW ###
 }
 
             # Close admx and adml files
