@@ -10,7 +10,7 @@ If you want to use this tool you need to:
 
 ``` csv
 path,type,name,value
-HKEY_LOCAL_MACHINE\SOFTWARE\NIKLASRAST,STRING,Test String,BlaBlaBla
+HKEY_LOCAL_MACHINE\SOFTWARE\NIKLASRAST,STRING,Test String,SomeValue
 HKEY_CURRENT_USER\SOFTWARE\NIKLASRAST,DWORD,Test DWORD,1
 ```
 
@@ -20,7 +20,7 @@ _STRING Key:_
 - path: HKEY_LOCAL_MACHINE\SOFTWARE\NIKLASRAST
 - type: STRING
 - name: Test String
-- value: BlaBlaBla
+- value: SomeValue
 
 _DWORD Key:_
 - path: HKEY_LOCAL_MACHINE\SOFTWARE\NIKLASRAST
