@@ -43,7 +43,7 @@ You can add as many keys as you need - one per line.
 ```
 
 This will do the following:
- - Check if the `add-keys.csv``exists in the same directory as the script. If not it will create a template csv file which you can use to add registry keys.
+ - Check if the `add-keys.csv` exists in the same directory as the script. If not it will create a template csv file which you can use to add registry keys.
  - Create GUIDs which are internally used for the admx template.
  - Ask you for the name of the admx/adml files.
  - Add all registry keys that are defined inside of `add-keys.csv` into the created admx/adml files. Each key will also be logged on the console. If all messages are green then everything is OK. If you see a red line there was an issue.
