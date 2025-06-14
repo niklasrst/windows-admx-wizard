@@ -2,6 +2,8 @@
 
 This tool can be used to create a custom ADMX and ADML file which creates or modifies keys in the Windows Registry.
 
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/niklasrst/windows-admx-wizard/total)
+
 ## How to?
 
 If you want to use this tool you need to:
