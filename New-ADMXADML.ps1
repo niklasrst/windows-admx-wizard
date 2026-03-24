@@ -58,7 +58,7 @@ Write-Host "Creating GUIDs..." -ForegroundColor Green
 $PolicyGUID = (New-Guid).Guid
 $ParentCategoryGUID = (New-Guid).Guid
 $Language = "en-US"
-$OutFileLocation = "$ENV:USERPROFILE\Desktop"
+$OutFileLocation = "$PSScriptRoot"
 $FileName = $Name.ToUpper()
 
 # Create admx and adml files
@@ -183,17 +183,19 @@ foreach ($RegKey in $RegKeys) {
         <string id="POL_$keyguid">$name</string>
         <string id="POL_$($keyguid)_HELP">Set the value for $name</string>
 "@ | Out-File -FilePath "$OutFileLocation\$($FileName).adml" -Append
-     }
+    }
 }
 
-            # Close admx and adml files
-            Write-Host "Closing $FileName ADMX file..." -ForegroundColor Green
+}
+
+# Close admx and adml files
+Write-Host "Closing $FileName ADMX file..." -ForegroundColor Green
 @"       
 </policies>
 </policyDefinitions>
 "@ | Out-File -FilePath "$OutFileLocation\$FileName.admx" -Append
 
-            Write-Host "Closing $FileName ADML file..." -ForegroundColor Green
+Write-Host "Closing $FileName ADML file..." -ForegroundColor Green
 @"
     </stringTable>
     <presentationTable>
@@ -211,5 +213,3 @@ foreach ($RegKey in $RegKeys) {
 </resources>
 </policyDefinitionResources>
 "@ | Out-File -FilePath "$OutFileLocation\$($FileName).adml" -Append
-
-}
