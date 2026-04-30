@@ -6,6 +6,9 @@ This tool can be used to create a custom ADMX and ADML file which creates or mod
 
 ## How to?
 
+Important for Intune Imported ADMX:
+Registry keys under System, Software\Microsoft, and Software\Policies\Microsoft are restricted (except a small Microsoft-defined allowlist). The generator automatically skips incompatible entries and prints a warning summary in the console.
+
 If you want to use this tool you need to:
 
 1.  Add Registry Keys into `add-keys.csv`:

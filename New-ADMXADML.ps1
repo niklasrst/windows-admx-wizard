@@ -37,6 +37,64 @@ param (
     [string]$CSVpath
 )
 
+# Imported ADMX in Intune only supports a subset of registry paths.
+$CSPForbiddenPrefixes = @(
+    'system',
+    'software\microsoft',
+    'software\policies\microsoft'
+)
+
+$CSPAllowedExceptions = @(
+    'software\policies\microsoft\office',
+    'software\microsoft\office',
+    'software\microsoft\windows\currentversion\explorer',
+    'software\microsoft\internet explorer',
+    'software\policies\microsoft\shared tools\proofing tools',
+    'software\policies\microsoft\imejp',
+    'software\policies\microsoft\ime\shared',
+    'software\policies\microsoft\shared tools\graphics filters',
+    'software\policies\microsoft\windows\currentversion\explore',
+    'software\policies\microsoft\softwareprotectionplatform',
+    'software\policies\microsoft\officesoftwareprotectionplatform',
+    'software\policies\microsoft\windows\windows search\preferences',
+    'software\policies\microsoft\exchange',
+    'software\microsoft\shared tools\proofing tools',
+    'software\microsoft\shared tools\graphics filters',
+    'software\microsoft\windows\windows search\preferences',
+    'software\microsoft\exchange',
+    'software\policies\microsoft\vba\security',
+    'software\microsoft\onedrive',
+    'software\microsoft\edge',
+    'software\microsoft\edgeupdate\'
+)
+
+function Test-CspCompatiblePolicyKey {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$PolicyKey
+    )
+
+    $normalized = $PolicyKey.TrimStart('\\').ToLowerInvariant()
+
+    foreach ($forbiddenPrefix in $CSPForbiddenPrefixes) {
+        if ($normalized.StartsWith($forbiddenPrefix)) {
+            if ($forbiddenPrefix -eq 'system') {
+                return $false
+            }
+
+            foreach ($allowedPrefix in $CSPAllowedExceptions) {
+                if ($normalized.StartsWith($allowedPrefix)) {
+                    return $true
+                }
+            }
+
+            return $false
+        }
+    }
+
+    return $true
+}
+
 # Check if add-keys.csv exists
 if (Test-Path $CSVpath) {
     Write-Host "add-keys.csv file found" -ForegroundColor Green
@@ -105,11 +163,16 @@ New-Item -Path "$OutFileLocation" -ItemType File -Name "$($FileName).adml" -Forc
 
 # Write keys to admx and adml
 $RegKeys = Import-Csv -Path "$CSVpath"
+$SkippedPolicies = New-Object System.Collections.Generic.List[Object]
 foreach ($RegKey in $RegKeys) {
     $type = $RegKey.type
     $name = $RegKey.name
     $value = $RegKey.value
     $keyguid = (New-Guid).Guid
+
+    if ($type -ieq "DWORD" -and $value -notmatch '^[0-9]+$') {
+        throw "Invalid DWORD value '$value' for '$name'. Use an unsigned integer in add-keys.csv."
+    }
 
     $scope = ""
     $path = ""
@@ -122,6 +185,17 @@ foreach ($RegKey in $RegKeys) {
         $path = $RegKey.path -replace("HKEY_CURRENT_USER\\", "")
     } else {
         $scope = "Both"    
+    }
+
+    if (-not (Test-CspCompatiblePolicyKey -PolicyKey $path)) {
+        Write-Warning "Skipping '$name' because '$($RegKey.path)' is not compatible with Imported ADMX CSP restrictions."
+        $SkippedPolicies.Add([PSCustomObject]@{
+            Path  = $RegKey.path
+            Type  = $type
+            Name  = $name
+            Value = $value
+        }) | Out-Null
+        continue
     }
 
 
@@ -152,10 +226,10 @@ foreach ($RegKey in $RegKeys) {
     <parentCategory ref="CAT_$ParentCategoryGUID"/>
         <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
         <enabledValue>
-            <decimal value="$value" id="ADML_DWORD"/>
+            <decimal value="$value"/>
         </enabledValue>
         <disabledValue>
-            <decimal value="0"/>
+            <delete/>
         </disabledValue>
     </policy>
 "@ | Out-File -FilePath "$OutFileLocation\$FileName.admx" -Append
@@ -213,3 +287,10 @@ Write-Host "Closing $FileName ADML file..." -ForegroundColor Green
 </resources>
 </policyDefinitionResources>
 "@ | Out-File -FilePath "$OutFileLocation\$($FileName).adml" -Append
+
+if ($SkippedPolicies.Count -gt 0) {
+    Write-Host "Skipped $($SkippedPolicies.Count) key(s) due to Imported ADMX CSP restrictions:" -ForegroundColor Yellow
+    $SkippedPolicies | ForEach-Object {
+        Write-Host " - [$($_.Type)] $($_.Name) -> $($_.Path)"
+    }
+}

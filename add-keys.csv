@@ -1,3 +1,100 @@
 path,type,name,value
-HKEY_LOCAL_MACHINE\SOFTWARE\NIKLASRAST\Inventory,STRING,ComputerProduct,Sample
-HKEY_LOCAL_MACHINE\SOFTWARE\NIKLASRAST\Inventory,STRING,ComputerSKU,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,ComputerProduct,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,ProductName,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,VPNEnabled,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WinBio,STRING,SupportPeripheralsWithEnhancedSignInSecurity,Sample
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server,DWORD,fDenyTSConnections,1
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced,DWORD,HideFileExt,1
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced,DWORD,LaunchTo,1
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation,STRING,SupportURL,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation,STRING,Manufacturer,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation,STRING,SupportPhone,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion,STRING,RegisteredOwner,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion,STRING,RegisteredOrganization,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System,DWORD,LocalAccountTokenFilterPolicy,1
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run,STRING,AutoStartApp01,Sample
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run,STRING,AutoStartApp02,Sample
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run,STRING,AutoStartApp03,Sample
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run,STRING,AutoStartApp04,Sample
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run,STRING,AutoStartApp05,Sample
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnce,STRING,RunOnceApp01,Sample
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnce,STRING,RunOnceApp02,Sample
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnce,STRING,RunOnceApp03,Sample
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnce,STRING,RunOnceApp04,Sample
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnce,STRING,RunOnceApp05,Sample
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnceEx,STRING,RunOnceExApp01,Sample
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnceEx,STRING,RunOnceExApp02,Sample
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnceEx,STRING,RunOnceExApp03,Sample
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnceEx,STRING,RunOnceExApp04,Sample
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnceEx,STRING,RunOnceExApp05,Sample
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run,STRING,AutoStartApp01,Sample
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run,STRING,AutoStartApp02,Sample
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run,STRING,AutoStartApp03,Sample
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run,STRING,AutoStartApp04,Sample
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run,STRING,AutoStartApp05,Sample
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnce,STRING,RunOnceApp01,Sample
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnce,STRING,RunOnceApp02,Sample
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnce,STRING,RunOnceApp03,Sample
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnce,STRING,RunOnceApp04,Sample
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnce,STRING,RunOnceApp05,Sample
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnceEx,STRING,RunOnceExApp01,Sample
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnceEx,STRING,RunOnceExApp02,Sample
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnceEx,STRING,RunOnceExApp03,Sample
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnceEx,STRING,RunOnceExApp04,Sample
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnceEx,STRING,RunOnceExApp05,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon,STRING,AutoAdminLogon,0
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon,STRING,DefaultUserName,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon,STRING,DefaultPassword,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon,STRING,DefaultDomainName,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\PasswordLess\Device,DWORD,DevicePasswordLessBuildVersion,0
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon,STRING,Shell,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkName01,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkName02,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkName03,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkName04,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkName05,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkName06,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkName07,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkName08,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkName09,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkName10,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkBrowser01,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkBrowser02,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkBrowser03,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkBrowser04,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkBrowser05,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkBrowser06,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkBrowser07,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkBrowser08,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkBrowser09,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkBrowser10,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkUrl01,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkUrl02,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkUrl03,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkUrl04,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkUrl05,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkUrl06,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkUrl07,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkUrl08,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkUrl09,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkUrl10,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkParameter01,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkParameter02,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkParameter03,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkParameter04,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkParameter05,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkParameter06,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkParameter07,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkParameter08,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkParameter09,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,WeblinkParameter10,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,ExtensionAttribute01,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,ExtensionAttribute02,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,ExtensionAttribute03,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,ExtensionAttribute04,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,ExtensionAttribute05,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,ExtensionAttribute06,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,ExtensionAttribute07,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,ExtensionAttribute08,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,ExtensionAttribute09,Sample
+HKEY_LOCAL_MACHINE\SOFTWARE\Fraport AG\DigitalWorkplace,STRING,ExtensionAttribute10,Sample
